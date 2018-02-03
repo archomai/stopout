@@ -30,8 +30,8 @@ def get_episode_list(webtoon_id, page):
     특정 page에 있는 에피소드 목록을 리스트로 리턴
     """
 
-    # http: // comic.naver.com / config / list.nhn?titleId = 703835 & page = 1
-    url = 'https://comic.naver.com/config/list.nhn'
+    # http: // comic.naver.com / webtoon / list.nhn?titleId = 703835 & page = 1
+    url = 'https://comic.naver.com/webtoon/list.nhn'
     params = {
         'titleId': webtoon_id,
         'page': page,
