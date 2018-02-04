@@ -12,7 +12,7 @@ def webtoon_list(request):
     }
     return render(
         request=request,
-        template_name='blog/post_list.html',
+        template_name='webtoon_list.html',
         context=context,
     )
 
@@ -25,5 +25,6 @@ def webtoon_detail(request, episode_id):
     }
     return render(
         request=request,
+        template_name='webtoon_detail.html',
         context=context,
     )
