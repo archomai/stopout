@@ -5,9 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Episode</title>
+    <title>Webtoon</title>
 </head>
 <body>
-
+    <div class="header">
+        <div class="container">
+            <h1><a href="">{{ webtoon.title }}</a></h1>
+        </div>
+    </div>
+    <div class="container">
+        {% for episode in webtoon.episode_set.all %}
+            <p class="">{{ episode.episode_id }} | {{ episode.title }} | {{ episode.rating }} | {{ episode.created_date }}</p>
+        {% endfor %}
+    </div>
 </body>
 </html>

@@ -17,11 +17,11 @@ def webtoon_list(request):
     )
 
 
-def webtoon_detail(request, episode_id):
+def webtoon_detail(request, pk):
 
-    episodes = Episode.objects.get(pk=episode_id)
+    webtoon = Webtoon.objects.get(pk=pk)
     context = {
-        'episodes': episodes,
+        'webtoon': webtoon,
     }
     return render(
         request=request,
