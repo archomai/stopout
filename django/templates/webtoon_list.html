@@ -8,6 +8,17 @@
     <title>Webtoon</title>
 </head>
 <body>
-
+    <div class="header">
+        <div class="container">
+            <h1><a href="{% url 'webtoon:webtoon-list' %}">Webtoon List</a></h1>
+        </div>
+    </div>
+    <div class="container">
+        {% for webtoon in webtoons %}
+        <div class="">
+            <h2 class="post-title">{{ webtoon.title }}</h2>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

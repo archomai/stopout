@@ -6,9 +6,9 @@ from .models import Webtoon, Episode
 
 def webtoon_list(request):
 
-    webtoon = Webtoon.objects.all()
+    webtoons = Webtoon.objects.all()
     context = {
-        'webtoon': webtoon,
+        'webtoons': webtoons,
     }
     return render(
         request=request,
@@ -19,9 +19,9 @@ def webtoon_list(request):
 
 def webtoon_detail(request, episode_id):
 
-    episode = Episode.objects.get(pk=episode_id)
+    episodes = Episode.objects.get(pk=episode_id)
     context = {
-        'episode': episode,
+        'episodes': episodes,
     }
     return render(
         request=request,
