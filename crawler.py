@@ -69,7 +69,27 @@ def get_episode_list(webtoon_id, page):
     return episode_list
 
 
+def get_webtoon(webtoon_name):
+
+    url = 'https://comic.naver.com/search.nhn'
+    params = {
+        'keyword': webtoon_name,
+    }
+
+    response = requests.get(url, params)
+    soup = BeautifulSoup(response.text, 'lxml')
+
+    webtoon_link = soup.select_one('ul.resultList > li > h5 > a').get('href')
+    webtoon_id = re.search(r'(\d+)$', webtoon_link).group(1)
+
+    return webtoon_id
+
+
 if __name__ == "__main__":
-    result = get_episode_list('650305', '1')
+    webtoon_name = input('웹툰 이름을 입력 하세요 :  ')
+    page_no = int(input('원하는 페이지를 입력하세요(1 추천) :  '))
+    webtoon = get_webtoon(webtoon_name)
+    result = get_episode_list(webtoon, page_no)
+
     for item in result:
         print(item)

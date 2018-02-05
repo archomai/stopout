@@ -20,6 +20,7 @@ def webtoon_list(request):
 def webtoon_detail(request, pk):
 
     webtoon = Webtoon.objects.get(pk=pk)
+    webtoon.get_episode_list()
     context = {
         'webtoon': webtoon,
     }
