@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Webtoon, Episode
+from .models import Webtoon
 
 
 def webtoon_list(request):

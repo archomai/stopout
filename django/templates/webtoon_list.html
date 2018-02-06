@@ -15,9 +15,9 @@
     </div>
     <div class="container">
         {% for webtoon in webtoons %}
-        <div class="">
-            <h2 class="post-title"><a href="{% url 'webtoon:webtoon-detail' pk=webtoon.pk %}">{{ webtoon.title }}</a></h2>
-        </div>
+        <ul>
+            <li><a href="{% url 'webtoon:webtoon-detail' pk=webtoon.pk %}">{{ webtoon.title }}</a></li>
+        </ul>
         {% endfor %}
     </div>
 </body>

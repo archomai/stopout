@@ -70,7 +70,6 @@ def get_episode_list(webtoon_id, page):
 
 
 def get_webtoon(webtoon_name):
-
     url = 'https://comic.naver.com/search.nhn'
     params = {
         'keyword': webtoon_name,
@@ -87,7 +86,7 @@ def get_webtoon(webtoon_name):
 
 if __name__ == "__main__":
     webtoon_name = input('웹툰 이름을 입력 하세요 :  ')
-    page_no = int(input('원하는 페이지를 입력하세요(1 추천) :  '))
+    page_no = int(input('원하는 페이지를 입력하세요 :  '))
     webtoon = get_webtoon(webtoon_name)
     result = get_episode_list(webtoon, page_no)
 

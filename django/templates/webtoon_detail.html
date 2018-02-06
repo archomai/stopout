@@ -14,9 +14,11 @@
         </div>
     </div>
     <div class="container">
+        <ul>
         {% for episode in webtoon.episode_set.all %}
-            <p class="">{{ episode.episode_id }} | {{ episode.title }} | {{ episode.rating }} | {{ episode.created_date }}</p>
+            <li>{{ episode.episode_id }} | {{ episode.title }} | {{ episode.rating }} | {{ episode.created_date }}</li>
         {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
